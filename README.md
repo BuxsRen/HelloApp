@@ -4,6 +4,10 @@
 >
 > https://github.com/BuxsRen/Hello
 
+> Python 命令行版本
+>
+> https://github.com/BuxsRen/HelloAppCli
+
 #### 介绍
 
 - 安卓app

@@ -34,11 +34,14 @@ let lastBackPressed = 0;
 
 // 监听返回键 true 表示阻止返回事件
 const onBackAndroid = () => {
+    // 全屏弹窗展示
     if (global._dialog_show) {
-        if (global._dialog_type === 'alert') { // 关闭弹窗
+        // 关闭弹窗
+        if (global._dialog_type === 'alert') {
             store.dispatch({type: 'dialog_off'})
             return true;
         }
+        // 拦截返回键
         if (global._dialog_type === 'call') { // 通话页面
             return true;
         }
@@ -46,8 +49,9 @@ const onBackAndroid = () => {
         //     return false;
         // }
     }
-    if (global._page_name === 'Circle' || global._page_name === 'Contacts') {
-        if (lastBackPressed && lastBackPressed + 2000 >= Date.now()) { // 退出应用
+    // 退出应用
+    if (global._page_name === 'Circle' || global._page_name === 'Contacts' || global._page_name === 'Login') {
+        if (lastBackPressed && lastBackPressed + 2000 >= Date.now()) {
             RNExitApp.exitApp();
             return false;
         }
