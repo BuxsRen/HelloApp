@@ -86,7 +86,6 @@ public class Audio extends ReactContextBaseJavaModule {
                                 param.put("type","call");
                                 param.put("toId",toId);
                                 param.put("data",data);
-                                param.put("token",token);
                                 Udp.send(JSON.toJSONString(param));
                             }
                         }
